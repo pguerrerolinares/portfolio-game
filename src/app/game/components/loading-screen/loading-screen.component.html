@@ -1,0 +1,9 @@
+<div class="loading-screen">
+  <div class="loading-content">
+    <h1 class="loading-title">PIXEL PORTFOLIO</h1>
+    <div class="loading-bar">
+      <div class="loading-progress" [style.width.%]="progress()"></div>
+    </div>
+    <p class="loading-text">{{ 'common.loading' | translate }} {{ progress() }}%</p>
+  </div>
+</div>

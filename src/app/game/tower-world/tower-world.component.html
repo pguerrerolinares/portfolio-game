@@ -1,0 +1,102 @@
+<div class="tower-wrapper">
+  <div class="tower-container">
+    <!-- Game viewport (fixed size, clips content) -->
+    <!-- Background: trees for most of tower, clouds when climbing ladder in contact -->
+    <div
+      #gameContainer
+      class="tower-viewport"
+      [class]="backgroundClass()"
+      tabindex="0"
+      (click)="focusGame()"
+      (keydown.space)="$event.preventDefault()"
+    >
+      <!-- Notifications -->
+      <app-game-notification />
+
+      <!-- Scrolling content (entire tower) -->
+      <div class="tower-content" [style.transform]="contentTransform()">
+        <!-- Terrain tiles (all sections) -->
+        @for (tile of terrain(); track tile.id) {
+          <app-sprite
+            class="terrain-tile"
+            [style.left.px]="tile.x"
+            [style.top.px]="tile.y"
+            sheet="tiles"
+            [frame]="tile.frame"
+            [scale]="1"
+          />
+        }
+
+        <!-- Ladders (all sections) -->
+        @for (tile of ladderTiles(); track tile.id) {
+          <app-sprite
+            class="ladder-tile"
+            [style.left.px]="tile.x"
+            [style.top.px]="tile.y"
+            sheet="tiles"
+            [frame]="tile.frame"
+            [scale]="1"
+          />
+        }
+
+        <!-- Decorations (all sections) -->
+        @for (deco of decorations(); track deco.id) {
+          <app-sprite
+            class="decoration"
+            [style.left.px]="deco.x"
+            [style.top.px]="deco.y"
+            [sheet]="deco.sheet"
+            [frame]="deco.frame"
+            [scale]="0.5"
+          />
+        }
+
+        <!-- NPCs (all sections) -->
+        @for (npc of npcs(); track npc.id) {
+          <app-npc
+            [npc]="npc"
+            [playerPosition]="playerPosition()"
+          />
+        }
+
+        <!-- Player -->
+        <app-player
+          class="player-entity"
+          [style.left.px]="playerPosition().x"
+          [style.top.px]="playerTopPosition()"
+          [state]="playerState()"
+          [facingRight]="playerFacingRight()"
+          [scale]="0.75"
+        />
+
+        <!-- Charge indicator (when charging jump) -->
+        @if (isCharging()) {
+          <div
+            class="charge-indicator"
+            [class.fully-charged]="isFullyCharged()"
+            [style.left.px]="playerPosition().x + 48"
+            [style.top.px]="playerTopPosition() - 20"
+          >
+            <div class="charge-bar">
+              <div
+                class="charge-fill"
+                [style.width.%]="chargePercent()"
+                [style.background]="chargeColor()"
+                [style.box-shadow]="'0 0 6px ' + chargeColor()"
+              ></div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Mobile controls (fixed to viewport) -->
+      <app-mobile-controls />
+
+      <!-- Section title banner -->
+      <app-section-title [title]="getSectionTitle()" />
+    </div>
+  </div>
+
+  <!-- Dialogue box overlay -->
+  <app-dialogue-box />
+</div>

@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "hero": {
+      "title": "PAUL's WORLD",
+      "subtitle": "Software Developer"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "Developer passionate about creating unique digital experiences."
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Technologies and tools I master."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Some of my featured works."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Have a project in mind? Let's talk!"
+    }
+  },
+  "hero": {
+    "welcome": "Welcome to PAUL's WORLD! Explore to discover my skills and projects."
+  },
+  "about": {
+    "intro": "Hello! I'm a passionate developer who loves creating interactive and engaging web experiences.",
+    "experience": {
+      "title": "Experience",
+      "description": "Over 5 years building modern web applications with Angular, React, and TypeScript."
+    },
+    "passion": {
+      "title": "Passion",
+      "description": "I enjoy combining creativity with technology to build pixel-perfect interfaces and smooth user experiences."
+    },
+    "stats": {
+      "exp": {
+        "title": "EXPERIENCE",
+        "value": "4+ years in development"
+      },
+      "tech": {
+        "title": "TECHNOLOGIES",
+        "value": "30+ tools mastered"
+      },
+      "builds": {
+        "title": "PROJECTS",
+        "value": "10+ projects completed"
+      }
+    },
+    "tagline": {
+      "line1": "Full-stack Developer specializing in Angular, Java and Python.",
+      "line2": "Passionate about IoT, AI and building great user experiences."
+    }
+  },
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools",
+    "categories": {
+      "frontend": "Frontend: Angular, TypeScript, React and more!"
+    },
+    "badges": {
+      "angular": "ANGULAR",
+      "angular.desc": "Expert in Angular 17+",
+      "typescript": "TYPESCRIPT",
+      "typescript.desc": "Strong typing advocate",
+      "java": "JAVA",
+      "java.desc": "Spring Boot & microservices",
+      "docker": "DOCKER",
+      "docker.desc": "Containerization pro"
+    }
+  },
+  "projects": {
+    "pixelMotion": {
+      "title": "Pixel Motion",
+      "description": "A pixel-art animation engine built with Angular and TypeScript."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "An interactive portfolio that works like a 2D platformer game."
+    },
+    "gameEngine": {
+      "title": "Game Engine",
+      "description": "A lightweight 2D game engine with physics and sprite management."
+    }
+  },
+  "contact": {
+    "intro": "Want to work together? I'd love to hear from you!",
+    "message": "Thanks for visiting my portfolio!",
+    "openToWork": "OPEN TO WORK! Let's build something amazing together.",
+    "github": "Check out my code on GitHub!",
+    "linkedin": "Connect with me on LinkedIn!"
+  },
+  "dialogue": {
+    "continue": "Continue",
+    "viewMore": "View More",
+    "close": "Close",
+    "hint": "Press SPACE or ENTER to continue"
+  },
+  "npcs": {
+    "frog": { "name": "Froggy" },
+    "ladybug": { "name": "Bugsy" },
+    "snail": { "name": "Shelly" },
+    "mouse": { "name": "Squeaky" },
+    "hero": {
+      "frog": {
+        "line1": "Welcome to PAUL's WORLD! I'm Froggy, your guide.",
+        "line2": "Paul is a Full-stack Developer with 4+ years of experience. He loves building awesome web apps!",
+        "line3": "Climb to the top and explore each world! The sign up there leads to the next area."
+      }
+    },
+    "about": {
+      "ladybug": {
+        "line1": "Hi! I'm Bugsy! Paul has been coding for over 4 years now.",
+        "line2": "He's worked with startups and big companies, building IoT dashboards and fintech platforms.",
+        "line3": "What drives him? Clean code, pixel-perfect UIs, and having fun while building software!"
+      }
+    },
+    "skills": {
+      "snail": {
+        "line1": "Hey there, I'm Shelly! Let me tell you about Paul's tech stack...",
+        "line2": "Angular is his specialty! Expert in v17+ with signals and standalone components.",
+        "line3": "Backend too: Java with Spring Boot, Python for AI/ML, and Docker for deployment!"
+      }
+    },
+    "projects": {
+      "mouse": {
+        "line1": "Squeaky here! Paul has built some cool projects...",
+        "line2": "IoT dashboards, fintech platforms, OCR pipelines with 98% accuracy!",
+        "line3": "Click on me to check out his GitHub and see the code!"
+      }
+    },
+    "contact": {
+      "frog": {
+        "line1": "You made it to the top! Great climbing, adventurer!",
+        "line2": "Want to work with Paul? He's always open to new opportunities!",
+        "line3": "Click on me for his GitHub, or find him on LinkedIn. Thanks for visiting!"
+      }
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "pressToOpen": "Tap to open",
+    "close": "Close",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "hud": {
+    "section": "Section",
+    "tapToMove": "Tap to move",
+    "controls": "Click to move | Space to jump"
+  }
+}

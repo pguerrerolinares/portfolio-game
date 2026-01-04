@@ -1,0 +1,54 @@
+// Colors - Pixel Art Dark Theme
+$color-bg-primary: #0f0f23;
+$color-bg-secondary: #1a1a2e;
+$color-bg-tertiary: #16213e;
+
+$color-text-primary: #00ff00;
+$color-text-secondary: #00aa00;
+$color-text-muted: #006600;
+
+$color-accent-cyan: #00ffff;
+$color-accent-magenta: #ff00ff;
+$color-accent-yellow: #ffff00;
+$color-accent-red: #ff0040;
+$color-accent-orange: #ff6600;
+$color-accent-green: #00ff00;
+
+// Terrain colors
+$color-terrain-grass: #4ade80;
+$color-terrain-sand: #fbbf24;
+$color-terrain-purple: #a855f7;
+$color-terrain-stone: #6b7280;
+
+// UI
+$color-border: #333;
+$color-border-light: #444;
+
+// Spacing
+$tile-size: 64px;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Typography
+$font-pixel: 'Press Start 2P', monospace;
+$font-mono: 'VT323', monospace;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Z-index layers
+$z-background: 0;
+$z-terrain: 10;
+$z-entities: 15;
+$z-decorations: 20;
+$z-items: 30;
+$z-enemies: 40;
+$z-player: 50;
+$z-hud: 100;
+$z-modal: 200;

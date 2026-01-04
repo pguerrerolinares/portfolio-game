@@ -1,0 +1,17 @@
+@if (!isCollected()) {
+  <div
+    class="item coin-item"
+    [class.glowing]="isPlayerNearby()"
+    [class.interactive]="isPlayerNearby()"
+    [style.left.px]="spawn().x"
+    [style.top.px]="spawn().y"
+    [style.--glow-intensity]="glowIntensity()"
+    (click)="onClick()"
+  >
+    <app-sprite
+      sheet="tiles"
+      [frame]="spawn().type"
+      [scale]="0.5"
+    />
+  </div>
+}

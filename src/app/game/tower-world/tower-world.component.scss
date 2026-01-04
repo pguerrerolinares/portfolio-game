@@ -1,0 +1,133 @@
+@use 'styles/variables' as *;
+@use 'styles/pixel-theme' as *;
+
+.tower-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  background: $color-bg-primary;
+}
+
+.tower-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tower-viewport {
+  position: relative;
+  width: 384px;
+  height: 640px;
+  overflow: hidden;
+  border: 4px solid $color-border;
+  touch-action: none;
+  user-select: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  outline: none;
+
+  // Two backgrounds: trees (default) and clouds (when climbing ladder in contact)
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.bg-trees {
+    background-image: url('../../../assets/sprites/backgrounds/background_color_trees.png');
+  }
+
+  &.bg-clouds {
+    background-image: url('../../../assets/sprites/backgrounds/background_clouds.png');
+  }
+
+  &:focus {
+    border-color: $color-accent-cyan;
+  }
+
+  // Responsive scaling for small screens
+  @media (max-height: 680px) {
+    transform: scale(0.95);
+    transform-origin: center;
+  }
+
+  @media (max-height: 620px) {
+    transform: scale(0.85);
+  }
+
+  @media (max-height: 560px) {
+    transform: scale(0.75);
+  }
+}
+
+.tower-content {
+  position: absolute;
+  width: 384px;
+  height: 3200px; // 5 sections * 640px
+  top: 0;
+  left: 0;
+  will-change: transform;
+  // Background is on .tower-viewport (Jump King style - fixed, changes per section)
+}
+
+.terrain-tile {
+  position: absolute;
+  pointer-events: none;
+  z-index: $z-terrain;
+}
+
+.ladder-tile {
+  position: absolute;
+  pointer-events: none;
+  z-index: $z-entities;
+}
+
+.decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: $z-decorations;
+}
+
+.player-entity {
+  position: absolute;
+  z-index: $z-player;
+  pointer-events: none;
+}
+
+// Charge jump indicator
+.charge-indicator {
+  position: absolute;
+  z-index: $z-hud;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.charge-bar {
+  width: 60px;
+  height: 8px;
+  @include pixel-border($color-border);
+  background: $color-bg-secondary;
+  overflow: hidden;
+}
+
+.charge-fill {
+  height: 100%;
+  // Background and box-shadow are set dynamically via [style]
+  transition: width 0.05s linear;
+}
+
+// Pulse animation when fully charged
+@keyframes charge-bar-pulse {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.3);
+  }
+}
+
+.charge-indicator.fully-charged {
+  .charge-bar {
+    animation: charge-bar-pulse 0.5s ease-in-out infinite;
+  }
+}

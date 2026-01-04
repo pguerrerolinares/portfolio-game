@@ -1,0 +1,138 @@
+<nav ngMenuBar class="menubar">
+  <!-- Hero -->
+  <div class="menu-wrapper">
+    <div
+      ngMenuItem
+      #heroItem="ngMenuItem"
+      class="menu-trigger"
+      [class.is-active]="isInSection('hero')"
+      value="Hero"
+      [submenu]="heroMenu"
+    >
+      Hero
+    </div>
+    <div
+      ngMenu
+      #heroMenu="ngMenu"
+      class="menu-dropdown"
+      [class.is-open]="heroItem.expanded()"
+    >
+      <div ngMenuItem value="go" class="menu-item" (click)="navigate('hero')">Ir a Hero</div>
+      @if (isInSection('hero')) {
+        <div class="menu-separator"></div>
+        <div ngMenuItem value="intro" class="menu-item menu-item--info" (click)="showInfo('hero', 'intro')">Intro</div>
+        <div ngMenuItem value="tutorial" class="menu-item menu-item--info" (click)="showInfo('hero', 'tutorial')">Tutorial</div>
+      }
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="menu-wrapper">
+    <div
+      ngMenuItem
+      #aboutItem="ngMenuItem"
+      class="menu-trigger"
+      [class.is-active]="isInSection('about')"
+      value="About"
+      [submenu]="aboutMenu"
+    >
+      About
+    </div>
+    <div
+      ngMenu
+      #aboutMenu="ngMenu"
+      class="menu-dropdown"
+      [class.is-open]="aboutItem.expanded()"
+    >
+      <div ngMenuItem value="go" class="menu-item" (click)="navigate('about')">Ir a About</div>
+      @if (isInSection('about')) {
+        <div class="menu-separator"></div>
+        <div ngMenuItem value="bio" class="menu-item menu-item--info" (click)="showInfo('about', 'bio')">Bio</div>
+        <div ngMenuItem value="background" class="menu-item menu-item--info" (click)="showInfo('about', 'background')">Background</div>
+      }
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="menu-wrapper">
+    <div
+      ngMenuItem
+      #skillsItem="ngMenuItem"
+      class="menu-trigger"
+      [class.is-active]="isInSection('skills')"
+      value="Skills"
+      [submenu]="skillsMenu"
+    >
+      Skills
+    </div>
+    <div
+      ngMenu
+      #skillsMenu="ngMenu"
+      class="menu-dropdown"
+      [class.is-open]="skillsItem.expanded()"
+    >
+      <div ngMenuItem value="go" class="menu-item" (click)="navigate('skills')">Ir a Skills</div>
+      @if (isInSection('skills')) {
+        <div class="menu-separator"></div>
+        <div ngMenuItem value="frontend" class="menu-item menu-item--info" (click)="showInfo('skills', 'frontend')">Frontend</div>
+        <div ngMenuItem value="backend" class="menu-item menu-item--info" (click)="showInfo('skills', 'backend')">Backend</div>
+        <div ngMenuItem value="tools" class="menu-item menu-item--info" (click)="showInfo('skills', 'tools')">Tools</div>
+      }
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="menu-wrapper">
+    <div
+      ngMenuItem
+      #projectsItem="ngMenuItem"
+      class="menu-trigger"
+      [class.is-active]="isInSection('projects')"
+      value="Projects"
+      [submenu]="projectsMenu"
+    >
+      Projects
+    </div>
+    <div
+      ngMenu
+      #projectsMenu="ngMenu"
+      class="menu-dropdown"
+      [class.is-open]="projectsItem.expanded()"
+    >
+      <div ngMenuItem value="go" class="menu-item" (click)="navigate('projects')">Ir a Projects</div>
+      @if (isInSection('projects')) {
+        <div class="menu-separator"></div>
+        <div ngMenuItem value="portfolio" class="menu-item menu-item--info" (click)="showInfo('projects', 'portfolio')">Portfolio</div>
+        <div ngMenuItem value="opensource" class="menu-item menu-item--info" (click)="showInfo('projects', 'opensource')">Open Source</div>
+      }
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="menu-wrapper">
+    <div
+      ngMenuItem
+      #contactItem="ngMenuItem"
+      class="menu-trigger"
+      [class.is-active]="isInSection('contact')"
+      value="Contact"
+      [submenu]="contactMenu"
+    >
+      Contact
+    </div>
+    <div
+      ngMenu
+      #contactMenu="ngMenu"
+      class="menu-dropdown"
+      [class.is-open]="contactItem.expanded()"
+    >
+      <div ngMenuItem value="go" class="menu-item" (click)="navigate('contact')">Ir a Contact</div>
+      @if (isInSection('contact')) {
+        <div class="menu-separator"></div>
+        <div ngMenuItem value="email" class="menu-item menu-item--info" (click)="showInfo('contact', 'email')">Email</div>
+        <div ngMenuItem value="linkedin" class="menu-item menu-item--info" (click)="showInfo('contact', 'linkedin')">LinkedIn</div>
+        <div ngMenuItem value="github" class="menu-item menu-item--info" (click)="showInfo('contact', 'github')">GitHub</div>
+      }
+    </div>
+  </div>
+</nav>

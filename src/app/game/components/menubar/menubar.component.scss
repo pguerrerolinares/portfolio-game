@@ -1,0 +1,105 @@
+@use 'styles/variables' as *;
+@use 'styles/pixel-theme' as *;
+
+:host {
+  display: block;
+  width: 384px; // Same as game width (6 tiles * 64px)
+}
+
+.menubar {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-sm;
+  background: $color-bg-secondary;
+  @include pixel-border($color-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-trigger {
+  @include pixel-button;
+  font-size: 8px;
+  padding: 4px 6px;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: $color-accent-cyan;
+    color: $color-bg-primary;
+    transform: none;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+
+  // Active section indicator
+  &.is-active {
+    background: $color-accent-green;
+    color: $color-bg-primary;
+  }
+}
+
+.menu-dropdown {
+  @include pixel-card;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 120px;
+  padding: $spacing-xs;
+  margin-top: 4px;
+  z-index: 1000;
+
+  // Hidden by default
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.menu-separator {
+  height: 1px;
+  background: $color-border;
+  margin: $spacing-xs 0;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  padding: $spacing-xs $spacing-sm;
+  font-family: $font-pixel;
+  font-size: 9px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: $color-text-primary;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: $color-accent-cyan;
+    color: $color-bg-primary;
+    outline: none;
+  }
+
+  &--info {
+    color: $color-text-secondary;
+    font-family: $font-pixel;
+    font-size: 8px;
+
+    &:hover,
+    &:focus {
+      background: $color-accent-magenta;
+      color: $color-bg-primary;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<button
+  class="npc-button"
+  [class.pressed]="isPressed()"
+  (touchstart)="onTouchStart($event)"
+  (touchend)="onTouchEnd($event)"
+  (touchcancel)="onTouchEnd($event)"
+>
+  <img class="button-bg" [src]="basePath + '/assets/sprites/mobile-controls/button_circle.png'" alt="" />
+  <img class="button-highlight" [src]="basePath + '/assets/sprites/mobile-controls/button_circle_highlight.png'" alt="" />
+  <img class="button-icon" [src]="basePath + '/assets/sprites/mobile-controls/icon_talk.png'" alt="Talk" />
+</button>

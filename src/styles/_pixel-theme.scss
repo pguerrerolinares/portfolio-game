@@ -1,0 +1,79 @@
+@use 'variables' as *;
+
+// Pixel-perfect rendering
+@mixin pixel-perfect {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+// Pixel border
+@mixin pixel-border($color: $color-border, $width: 2px) {
+  border: $width solid $color;
+  border-radius: 0;
+}
+
+// Pixel shadow (no blur)
+@mixin pixel-shadow($offset: 2px, $color: rgba(0, 0, 0, 0.5)) {
+  box-shadow: $offset $offset 0 $color;
+}
+
+// Pixel text shadow
+@mixin pixel-text-shadow($color: $color-text-muted) {
+  text-shadow: 2px 2px 0 $color;
+}
+
+// Scanlines effect
+@mixin scanlines {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+}
+
+// CRT glow effect
+@mixin crt-glow($color: $color-text-primary) {
+  text-shadow:
+    0 0 5px $color,
+    0 0 10px $color,
+    0 0 15px $color;
+}
+
+// Pixel button base
+@mixin pixel-button {
+  @include pixel-border;
+  @include pixel-shadow;
+  background: $color-bg-secondary;
+  color: $color-text-primary;
+  font-family: $font-pixel;
+  font-size: 10px;
+  padding: $spacing-sm $spacing-md;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Pixel card
+@mixin pixel-card {
+  @include pixel-border;
+  @include pixel-shadow;
+  background: $color-bg-secondary;
+  padding: $spacing-md;
+}

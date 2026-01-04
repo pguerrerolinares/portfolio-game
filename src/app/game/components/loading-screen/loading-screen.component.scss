@@ -1,0 +1,55 @@
+@use 'styles/variables' as *;
+@use 'styles/pixel-theme' as *;
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-bg-primary;
+  z-index: 1000;
+}
+
+.loading-content {
+  text-align: center;
+  padding: $spacing-lg;
+}
+
+.loading-title {
+  font-family: $font-pixel;
+  font-size: 20px;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+  @include crt-glow;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.loading-bar {
+  width: 250px;
+  height: 16px;
+  @include pixel-border($color-text-muted);
+  background: $color-bg-secondary;
+  margin: 0 auto $spacing-md;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    width: 300px;
+    height: 20px;
+  }
+}
+
+.loading-progress {
+  height: 100%;
+  background: $color-accent-green;
+  transition: width 0.2s;
+}
+
+.loading-text {
+  font-family: $font-mono;
+  font-size: 14px;
+  color: $color-text-secondary;
+}

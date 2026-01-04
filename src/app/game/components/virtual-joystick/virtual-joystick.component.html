@@ -1,0 +1,16 @@
+<div class="joystick-container">
+  <img
+    class="joystick-pad"
+    [src]="basePath + '/assets/sprites/mobile-controls/joystick_circle_pad_a.png'"
+    alt=""
+    draggable="false"
+  />
+  <img
+    class="joystick-nub"
+    [class.active]="isActive()"
+    [style.transform]="'translate(' + nubOffset().x + 'px, ' + nubOffset().y + 'px)'"
+    [src]="basePath + '/assets/sprites/mobile-controls/joystick_circle_nub_a.png'"
+    alt=""
+    draggable="false"
+  />
+</div>

@@ -1,0 +1,8 @@
+@use 'styles/variables' as *;
+
+:host {
+  position: absolute;
+  z-index: $z-player;
+  pointer-events: none;
+  display: block;
+}

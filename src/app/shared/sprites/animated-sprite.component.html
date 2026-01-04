@@ -1,0 +1,15 @@
+<div
+  class="animated-sprite-container"
+  [style.width.px]="scaledDimensions().width"
+  [style.height.px]="scaledDimensions().height"
+  [style.transform]="flipTransform()"
+>
+  <div
+    class="animated-sprite"
+    [style.width.px]="currentFrameDimensions().width"
+    [style.height.px]="currentFrameDimensions().height"
+    [style.background-image]="backgroundImage()"
+    [style.background-position]="backgroundPosition()"
+    [style.background-size]="backgroundSize()"
+  ></div>
+</div>

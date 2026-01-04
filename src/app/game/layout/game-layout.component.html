@@ -1,0 +1,11 @@
+@if (isLoading()) {
+  <app-loading-screen [progress]="loadProgress()" />
+} @else {
+  <div class="game-layout">
+    <app-menubar />
+    <main class="game-content">
+      <router-outlet />
+    </main>
+    <app-transition-overlay />
+  </div>
+}

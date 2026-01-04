@@ -1,0 +1,63 @@
+<div
+  class="jump-container"
+  [class.pressed]="isPressed()"
+  [class.charging]="isCharging()"
+  [class.fully-charged]="isFullyCharged()"
+  (touchstart)="onTouchStart($event)"
+  (touchend)="onTouchEnd($event)"
+  (touchcancel)="onTouchEnd($event)"
+>
+  <!-- Charge ring SVG (behind button) -->
+  @if (isCharging()) {
+    <svg class="charge-ring" viewBox="0 0 64 64">
+      <!-- Background ring -->
+      <circle
+        cx="32"
+        cy="32"
+        [attr.r]="ringRadius"
+        fill="none"
+        stroke="rgba(0,0,0,0.3)"
+        stroke-width="6"
+      />
+      <!-- Charge progress ring with dynamic color -->
+      <circle
+        cx="32"
+        cy="32"
+        [attr.r]="ringRadius"
+        fill="none"
+        class="charge-progress"
+        [attr.stroke]="chargeColor()"
+        stroke-width="6"
+        stroke-linecap="round"
+        [attr.stroke-dasharray]="ringCircumference"
+        [attr.stroke-dashoffset]="ringOffset()"
+        transform="rotate(-90 32 32)"
+      />
+    </svg>
+  }
+
+  <img
+    class="button-bg"
+    [src]="basePath + '/assets/sprites/mobile-controls/button_circle.png'"
+    alt=""
+    draggable="false"
+  />
+  <img
+    class="button-highlight"
+    [class.visible]="isPressed()"
+    [src]="basePath + '/assets/sprites/mobile-controls/button_circle_highlight.png'"
+    alt=""
+    draggable="false"
+  />
+  <img
+    class="button-icon"
+    [src]="basePath + '/assets/sprites/mobile-controls/icon_jump.png'"
+    alt="Jump"
+    draggable="false"
+  />
+
+  <!-- Charge percentage text -->
+  @if (isCharging()) {
+    <span class="charge-text">{{ chargePercent() | number:'1.0-0' }}%</span>
+  }
+</div>

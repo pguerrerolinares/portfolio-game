@@ -1,0 +1,14 @@
+@use 'styles/variables' as *;
+
+.transition-overlay {
+  position: absolute;
+  inset: 0;
+  background: $color-bg-primary;
+  z-index: $z-modal;
+  pointer-events: none;
+  opacity: 0;
+
+  &.active {
+    pointer-events: all;
+  }
+}

@@ -1,0 +1,13 @@
+<div
+  class="enemy"
+  [class.fleeing]="isFleeing()"
+  [class.flip]="!facingRight()"
+  [style.left.px]="position().x"
+  [style.top.px]="position().y"
+>
+  <app-sprite
+    sheet="enemies"
+    [frame]="currentFrame()"
+    [scale]="0.5"
+  />
+</div>

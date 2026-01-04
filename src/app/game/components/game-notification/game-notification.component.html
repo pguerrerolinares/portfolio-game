@@ -1,0 +1,14 @@
+@if (notification(); as n) {
+  <div class="notification-container" [class]="typeClass()" (click)="dismiss()">
+    <div class="notification-content">
+      @if (n.icon) {
+        <span class="notification-icon">{{ n.icon }}</span>
+      }
+      <div class="notification-text">
+        <span class="notification-title">{{ n.title }}</span>
+        <span class="notification-message">{{ n.message }}</span>
+      </div>
+    </div>
+    <div class="notification-progress" [style.--duration.ms]="n.duration"></div>
+  </div>
+}

@@ -1,0 +1,19 @@
+<div class="section-title-overlay" [class.visible]="isVisible()">
+  <div class="banner">
+    <img
+      class="banner-left"
+      [src]="basePath + '/assets/sprites/ui/banner_left.png'"
+      alt=""
+      draggable="false"
+    />
+    <div class="banner-center">
+      <span class="title-text">{{ title() | translate }}</span>
+    </div>
+    <img
+      class="banner-right"
+      [src]="basePath + '/assets/sprites/ui/banner_right.png'"
+      alt=""
+      draggable="false"
+    />
+  </div>
+</div>

@@ -1,0 +1,15 @@
+:host {
+  display: inline-block;
+}
+
+.animated-sprite-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-sprite {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background-repeat: no-repeat;
+}

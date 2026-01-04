@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+}
+
+.sprite {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background-repeat: no-repeat;
+  transform-origin: top left;
+}

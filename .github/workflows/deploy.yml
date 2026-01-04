@@ -30,10 +30,10 @@ jobs:
         run: bun install
 
       - name: Build
-        run: bun run build -- --base-href /pixel-portfolio/
+        run: bun run build -- --base-href /portfolio-game/
 
       - name: Copy 404.html for SPA routing
-        run: cp dist/pixel-portfolio/browser/index.html dist/pixel-portfolio/browser/404.html
+        run: cp dist/portfolio-game/browser/index.html dist/portfolio-game/browser/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/pixel-portfolio/browser
+          path: dist/portfolio-game/browser
 
   deploy:
     environment:

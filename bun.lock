@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "pixel-portfolio",
+      "name": "portfolio-game",
       "dependencies": {
         "@angular/aria": "^21.0.5",
         "@angular/cdk": "^21.0.5",

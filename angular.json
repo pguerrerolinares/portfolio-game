@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "pixel-portfolio": {
+    "portfolio-game": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -91,10 +91,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pixel-portfolio:build:production"
+              "buildTarget": "portfolio-game:build:production"
             },
             "development": {
-              "buildTarget": "pixel-portfolio:build:development"
+              "buildTarget": "portfolio-game:build:development"
             }
           },
           "defaultConfiguration": "development"

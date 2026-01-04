@@ -273,10 +273,10 @@ Automatic deployment via GitHub Actions on push to `main`:
 
 ```bash
 # Manual deployment (disable font inlining if network issues)
-NG_FONT_INLINING=false npm run build -- --base-href=/pixel-portfolio/
+NG_FONT_INLINING=false npm run build -- --base-href=/portfolio-game/
 ```
 
-Live at: `https://[username].github.io/pixel-portfolio/`
+Live at: `https://[username].github.io/portfolio-game/`
 
 **Asset Path Handling:**
 
@@ -302,7 +302,7 @@ Components with basePath:
 - `virtual-joystick` - Joystick pad and nub
 - `section-title` - Section banner images
 
-This ensures assets load correctly both on `localhost` and `username.github.io/pixel-portfolio/`.
+This ensures assets load correctly both on `localhost` and `username.github.io/portfolio-game/`.
 
 ## Development
 

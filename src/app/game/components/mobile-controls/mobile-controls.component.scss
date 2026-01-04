@@ -1,0 +1,27 @@
+@use 'styles/variables' as *;
+
+// Dynamic joystick - appears where user touches in LEFT zone
+// Uses absolute positioning within game-scene
+.dynamic-joystick {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: $z-hud;
+  pointer-events: auto;
+}
+
+// Action buttons - absolute position within game-scene (RIGHT side)
+.action-buttons {
+  position: absolute;
+  right: 8px;
+  bottom: 80px; // Above the bottom to stay visible in game area
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: $z-hud;
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+}

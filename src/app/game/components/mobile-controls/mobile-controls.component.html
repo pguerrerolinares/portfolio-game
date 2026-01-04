@@ -1,0 +1,20 @@
+@if (isMobile()) {
+  <!-- Dynamic Joystick (LEFT ZONE) -->
+  @if (joystickVisible()) {
+    <app-virtual-joystick
+      class="dynamic-joystick"
+      [style.left.px]="joystickPosition()?.x"
+      [style.top.px]="joystickPosition()?.y"
+      [nubOffsetX]="joystickNubOffset().x"
+      [nubOffsetY]="joystickNubOffset().y"
+    />
+  }
+
+  <!-- Action Buttons (RIGHT ZONE - Jump always at bottom, Talk above) -->
+  <div class="action-buttons">
+    @if (nearbyNPC(); as npc) {
+      <app-npc-interact-button [npc]="npc" />
+    }
+    <app-jump-button />
+  </div>
+}
